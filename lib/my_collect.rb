@@ -1,16 +1,13 @@
 def my_collect(array)
-    i = 0
-    languages = []
-    students = []
-    while i < array.length 
-        i += 1
-        my_collect(languages) do |language|
-            name.split(" ").first
-          end
-          my_collect(students) do |student|
-            lang.upcase
-          end
-        array = languages + students << yield(array[i])
-          end
-    array
+  i = 0
+  name_collection = []
+  while i < array.length
+    name_collection.push yield(array[i])
+  # you could also do it this way:
+  # name_collection << yield(array[i])
+    i += 1
+  end
+  name_collection
 end
+
+my_collect(list) {|i| i.split(" ").first}
